@@ -2,7 +2,7 @@
 
 void write_log(char *filename, char *msg)
 {
-    FILE *f = fopen(filename, "a");
+    FILE *f = fopen(filename, "w");
 
     if (!f || f == -1) {
         return;
