@@ -3,6 +3,9 @@
 void write_log(char *filename, char *msg)
 {
     FILE *f = fopen(filename, "a");
+
+    if (!f || f == -1) {
+        return;
     fprintf(f, "%s\n", msg);
     fclose(f);
 }
