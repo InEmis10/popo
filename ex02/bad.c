@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int length(char *s)
+int lenght(char *s)
 {
     int i = 0;
     
