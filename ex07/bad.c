@@ -3,17 +3,20 @@
 
 int main()
 {
-    int *p = malloc(3 * sizeof(int));
-    int i;
+    int size = 3
+    int *p = malloc(size * sizeof(int));
 
-    for (i = 0; i < 3; i++) {
+    if (!p) {
+        return 84;
+    for (int i = 0; i < size; i++) {
         p[i] = i;
     }
 
     /* result of realloc is ignored, possible leak or invalid pointer use */
-    realloc(p, 6 * sizeof(int));
+    size = 6;
+    realloc(p, size * sizeof(int));
 
-    for (i = 0; i < 6; i++) {
+    for (int i = 0; i < size; i++) {
         printf("%d ", p[i]);
     }
     printf("\n");
