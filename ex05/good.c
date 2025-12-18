@@ -13,11 +13,8 @@ void printFirstElement(const int *array, int size)
 int main(void)
 {
     int numbers[3] = {1, 2, 3};
-    int *pointer = NULL;
 
-    /* Properly initialize pointer when needed. */
-    pointer = numbers;
-    printFirstElement(pointer, 3);
+    printFirstElement(numbers, 3);
     return 0;
 }
 
