@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int * creat_tab(int size)
+static int *create_tab(int size)
 {
     int *p;
-    int i;
-
-    p = malloc(size * sizeof(int));
-    for (i = 0; i < size; i++) {
+    
+    p = malloc((size + 1) * sizeof(int));
+    if (!p)
+        return NULL;
+    for (int i = 0; i < size; i++) {
         p[i] = i;
     }
     return p;
@@ -15,11 +16,11 @@ int * creat_tab(int size)
 
 int main()
 {
-    int *t;
     int n = 5;
-    int i;
+    int *t = creat_tab(n);;
 
-    t = creat_tab(n);
+    if (!t) {
+        return 84;
     for (i = 0; i < n; i++) {
         printf("%d ", t[i]);
     }
