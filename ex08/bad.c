@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void calc_square(int *res, int x)
+static void calc_square(int *res, int x)
 {
     *res = x * x;
 }
