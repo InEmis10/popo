@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /* Use English and start with a verb in the function name. [web:11][web:14] */
-int computeAverage(const int *values, int size)
+static int computeAverage(const int *values, int size)
 {
     int index = 0;
     int sum = 0;
